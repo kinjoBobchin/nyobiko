@@ -8,5 +8,3 @@
 ## Firebase or GoogleCloudPlattformを使用できるようになる
 
 ## 期限：2018年以内ぐらいか
-
-## 変更確認
