@@ -1,11 +1,9 @@
 # これはN予備校演習用のリポジトリです
 
-***
 ※ マークダウンの書き方はこちらを参考↓
 https://qiita.com/oreo/items/82183bfbaac69971917f
 
 # 目標
-***
 
 * JavaScriptでツイッターを作ってみよう ←今ここ
 * AngularJSでツイッターを作ってみよう
@@ -16,7 +14,6 @@ https://qiita.com/oreo/items/82183bfbaac69971917f
 
 # ツイッターを作るにあたって作る機能
 
-***
 
 * ログイン
 * コメント
