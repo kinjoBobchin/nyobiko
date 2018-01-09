@@ -2,9 +2,19 @@
 
 # 目標
 
-## JavaScriptの理解
-## AngularJSでアプリを作成
-## Vuejsでアプリを作成
-## Firebase or GoogleCloudPlattformを使用できるようになる
+・ JavaScriptでツイッターを作ってみよう ←今ここ
+・ AngularJSでツイッターを作ってみよう
+・ Vuejsでツイッターを作ってみよう
+・ Firebase or GoogleCloudPlattformにデプロイしよう
 
 ## 期限：2018年以内
+
+## ツイッターを作るにあたって作る機能
+・ログイン
+・コメント
+・紐付け
+・リンク
+・通知
+・テスト環境・本番環境
+
+今思い浮かぶのはこれぐらい・・・
