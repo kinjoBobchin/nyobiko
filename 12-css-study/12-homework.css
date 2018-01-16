@@ -1,0 +1,8 @@
+body {
+    background: lightblue;
+}
+table, td, th {
+    color: darkblue;
+    border: solid 1px gray;
+    background-color: #ffffff;
+}
