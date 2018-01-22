@@ -17,8 +17,7 @@
     var countUpTime;
     //countUpIdを定義して、カウントしている時間を止める
     var countUpId;
-    //スタートの時間 - ストップの時間を足し上げて、ストップ機能を実装
-    //詳しい説明はここhttps://dotinstall.com/lessons/stop_watch_js_v4/41207
+    //スタートの時間 - ストップの時間を足し上げて、ストップ機能を実装→https://dotinstall.com/lessons/stop_watch_js_v4/41207
     var timeToAdd;
 
     //機能の定義：
