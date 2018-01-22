@@ -22,7 +22,6 @@
             game.stopButton.disabled = "true";
             game.initButton.disabled = "true";
         },
-
         //表示する時間
         showDisplay: function(time) {
             if (0 >= time) {
@@ -32,18 +31,18 @@
             } else {
                 game.display.innerText = time / 1000 + "秒" + "まだまだじゃな";
             }
+        },
+        //起点となる時間の取得
+        startTime: function () {
+            game.initTime = Date.now();
+            countUp();
         }
+
     };
     //イベントリスナーとボタンを紐ずけ
     game.startButton.onclick = start;
     game.stopButton.onclick = stop;
     game.initButton.onclick = game.init;
-
-    //起点となる時間の取得
-    function startTime() {
-        game.initTime = Date.now();
-        countUp();
-    }
 
     //時間をはかる
     function countUp() {
@@ -57,7 +56,7 @@
     //スタートの機能
     function start() {
         //スタートボタンを押したら発動する
-        startTime();
+        game.startTime();
         //スタートおした時、ボタンの状態を変化：スタート→押せない、ストップ→押せる
         game.stopButton.disabled = "";
         game.startButton.disabled = "true";
