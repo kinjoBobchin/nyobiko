@@ -35,32 +35,30 @@
         //起点となる時間の取得
         startTime: function () {
             game.initTime = Date.now();
-            countUp();
+            game.countUp();
+        },
+        //時間をはかる
+        countUp: function() {
+            game.countUpId = setTimeout(function () {
+                game.countUpTime = Date.now() - game.initTime + game.timeToAdd;
+                game.countUp();
+                game.showDisplay(game.countUpTime);
+            }, 10);
+        },
+        //スタートの機能
+        start: function () {
+            //スタートボタンを押したら発動する
+            game.startTime();
+            //スタートおした時、ボタンの状態を変化：スタート→押せない、ストップ→押せる
+            game.stopButton.disabled = "";
+            game.startButton.disabled = "true";
         }
-
     };
     //イベントリスナーとボタンを紐ずけ
-    game.startButton.onclick = start;
+    game.startButton.onclick = game.start;
     game.stopButton.onclick = stop;
     game.initButton.onclick = game.init;
 
-    //時間をはかる
-    function countUp() {
-        game.countUpId = setTimeout(function () {
-            game.countUpTime = Date.now() - game.initTime + game.timeToAdd;
-            countUp();
-            game.showDisplay(game.countUpTime);
-        }, 10);
-    }
-
-    //スタートの機能
-    function start() {
-        //スタートボタンを押したら発動する
-        game.startTime();
-        //スタートおした時、ボタンの状態を変化：スタート→押せない、ストップ→押せる
-        game.stopButton.disabled = "";
-        game.startButton.disabled = "true";
-    }
 
     //ストップの機能
     function stop() {
