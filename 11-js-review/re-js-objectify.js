@@ -52,27 +52,25 @@
             //スタートおした時、ボタンの状態を変化：スタート→押せない、ストップ→押せる
             game.stopButton.disabled = "";
             game.startButton.disabled = "true";
+        },
+        //ストップの機能
+        stop: function () {
+            //countStart()を止める
+            clearTimeout(game.countUpId);
+            //スタート時間に、前回とめた時間を追加する
+            game.timeToAdd += Date.now() - game.initTime;
+            //ストップを押した時に、判定を追加する
+            game.showDisplay(game.timeToAdd);
+            //スタートおした時、ボタンの状態：スタート→押せる、ストップ→押せない
+            game.stopButton.disabled = "true";
+            game.startButton.disabled = "";
+            game.initButton.disabled = "";
         }
     };
     //イベントリスナーとボタンを紐ずけ
     game.startButton.onclick = game.start;
-    game.stopButton.onclick = stop;
+    game.stopButton.onclick = game.stop;
     game.initButton.onclick = game.init;
-
-
-    //ストップの機能
-    function stop() {
-        //countStart()を止める
-        clearTimeout(game.countUpId);
-        //スタート時間に、前回とめた時間を追加する
-        game.timeToAdd += Date.now() - game.initTime;
-        //ストップを押した時に、判定を追加する
-        game.showDisplay(game.timeToAdd);
-        //スタートおした時、ボタンの状態：スタート→押せる、ストップ→押せない
-        game.stopButton.disabled = "true";
-        game.startButton.disabled = "";
-        game.initButton.disabled = "";
-    }
 
     //初期の状態を呼び出し
     game.init();
