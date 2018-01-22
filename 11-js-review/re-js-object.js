@@ -12,8 +12,9 @@
     //initボタン
     var initButton = document.getElementById("init-button");
     //初期の時間
-    var currentTime = null;
-    //getTime()→秒に変換
+    var currentTime = 0;
+    //countUpIdを定義して、カウントしている時間を止める
+    var countUpId = 0;
 
     //機能の定義：
     //①ボタンを押すと、時間が開始
@@ -24,45 +25,45 @@
     //答えとのギャップ、答え→start,stopのファンクションを作っている、自分→いきなりfunctionの中にまとめようとしている
     //いろいろ、機能を作る→あとでオブジェクトとしてまとめたほうが良さそう
 
-    //初期の状態を呼び出し
-    init();
-
     //初期状態は、ストップウォッチが0の状態を表示
     function init() {
-        display.innerText = 0;
+        currentTime = 0;
+        display.innerText = currentTime;
         stopButton.disabled = "true";
     }
+
+    //起点となる時間の取得
+    function startTime() {
+        currentTime = Date.now();
+        countUp();
+    }
+
+    //時間をはかる
+    function countUp() {
+        countUpId = setTimeout(function () {
+            var countUpTime = Date.now() - currentTime;
+            countUp();
+            display.innerText = countUpTime;
+        }, 10);
+    }
+
 
     //スタートの機能
     function start() {
 
-        //起点となる時間の取得
-        function setTime() {
-            currentTime = new Date().getTime();
-        }
+        startTime();
 
-        //起点となる時間からの差分
-        function countUpTime() {
-            var startTime = new Date().getTime();
-            display.innerText = (startTime - currentTime) / 1000;
-        }
-
-        //差分表示
-        function countStart() {
-            setInterval(countUpTime, 50);
-        }
-
-        countStart();
-        setTime();
-
-        //スタートおした時、ボタンの状態：スタート→押せない、ストップ→押せる
+        //スタートおした時、ボタンの状態を変化：スタート→押せない、ストップ→押せる
         stopButton.disabled = "";
         startButton.disabled = "true";
     }
 
     //ストップの機能
     function stop() {
-
+        //ToDo
+        //countStart()を止める
+        clearTimeout(countUpId);
+        //判定結果を表示する
 
         //スタートおした時、ボタンの状態：スタート→押せる、ストップ→押せない
         stopButton.disabled = "true";
@@ -73,4 +74,8 @@
     startButton.onclick = start;
     stopButton.onclick = stop;
     initButton.onclick = init;
+
+    //初期の状態を呼び出し
+    init();
+
 })();
