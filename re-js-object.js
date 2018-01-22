@@ -3,6 +3,7 @@
 (function(){
     'use strict';
     //表示する画面の選択
+    var display = document.getElementById("display-area");
     //startボタンを実装
     //stopボタンを実装
     //機能の定義：
