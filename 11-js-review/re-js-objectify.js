@@ -13,6 +13,16 @@
         countUpId: null, //countUpIdを定義して、カウントしている時間を止める
         timeToAdd: null, //スタートの時間 - ストップの時間を足し上げて、ストップ機能を実装→https://dotinstall.com/lessons/stop_watch_js_v4/41207
 
+        //初期状態は、ストップウォッチが0の状態を表示
+        init: function () {
+            game.initTime = 0;
+            game.countUpTime = 0;
+            game.timeToAdd = 0;
+            game.showDisplay(game.initTime);
+            game.stopButton.disabled = "true";
+            game.initButton.disabled = "true";
+        },
+
         //表示する時間
         showDisplay: function(time) {
             if (0 >= time) {
@@ -27,28 +37,7 @@
     //イベントリスナーとボタンを紐ずけ
     game.startButton.onclick = start;
     game.stopButton.onclick = stop;
-    game.initButton.onclick = init;
-
-
-    // function showDisplay(time) {
-    //     if (0 >= time) {
-    //         game.display.innerText = "いくぞ鬼太郎";
-    //     } else if(3999 <= time && time <= 4000){
-    //         game.display.innerText = time / 1000+ "秒" + "さすがじゃ鬼太郎";
-    //     } else {
-    //         game.display.innerText = time / 1000 + "秒" + "まだまだじゃな";
-    //     }
-    // }
-
-    //初期状態は、ストップウォッチが0の状態を表示
-    function init() {
-        game.initTime = 0;
-        game.countUpTime = 0;
-        game.timeToAdd = 0;
-        game.showDisplay(game.initTime);
-        game.stopButton.disabled = "true";
-        game.initButton.disabled = "true";
-    }
+    game.initButton.onclick = game.init;
 
     //起点となる時間の取得
     function startTime() {
@@ -89,6 +78,6 @@
     }
 
     //初期の状態を呼び出し
-    init();
+    game.init();
 
 })();
