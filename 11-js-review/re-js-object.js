@@ -9,6 +9,8 @@
     var startButton = document.getElementById("start-button");
     //stopボタン
     var stopButton = document.getElementById("stop-button");
+    //初期の時間
+    var currentTime = null;
 
     //機能の定義：
     //①ボタンを押すと、時間が開始
@@ -18,13 +20,27 @@
 
     //答えとのギャップ、答え→start,stopのファンクションを作っている、自分→いきなりfunctionの中にまとめようとしている
     //いろいろ、機能を作る→あとでオブジェクトとしてまとめたほうが良さそう
-    function start() {
-        // var currentTime = new Date().getTime;
-        // display.innerText = currentTime;
-        console.log("ボタン反応してるよ");
+
+    //初期の状態を呼び出している
+    init();
+
+    //初期状態は、ストップウォッチが0の状態を表示
+    function init() {
+        display.innerText = currentTime /1000 ;
+        console.log("初期化されたよ");
     }
 
+    //スタートの機能
+    function start() {
+        console.log("スタートおしたよ");
+    }
+
+    //ストップの機能
+    function stop() {
+        console.log("ストップおしたよ");
+    }
+
+    //イベントリスナーをまとめた
     startButton.onclick = start;
-
-
+    stopButton.onclick = stop;
 })();
