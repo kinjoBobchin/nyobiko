@@ -13,6 +13,7 @@
     var initButton = document.getElementById("init-button");
     //初期の時間
     var currentTime = null;
+    //getTime()→秒に変換
 
     //機能の定義：
     //①ボタンを押すと、時間が開始
@@ -23,39 +24,50 @@
     //答えとのギャップ、答え→start,stopのファンクションを作っている、自分→いきなりfunctionの中にまとめようとしている
     //いろいろ、機能を作る→あとでオブジェクトとしてまとめたほうが良さそう
 
-    //初期の状態を呼び出している
+    //初期の状態を呼び出し
     init();
 
     //初期状態は、ストップウォッチが0の状態を表示
     function init() {
-        currentTime = null;
-        display.innerText = currentTime;
-        console.log("初期化されたよ");
+        display.innerText = 0;
+        stopButton.disabled = "true";
     }
 
     //スタートの機能
     function start() {
-        //秒の表示
 
+        //起点となる時間の取得
         function setTime() {
-            var currentTime = new Date().getTime() /(24 * 60 * 60 * 1000);
-            display.innerText = currentTime;
+            currentTime = new Date().getTime();
         }
 
+        //起点となる時間からの差分
+        function countUpTime() {
+            var startTime = new Date().getTime();
+            display.innerText = (startTime - currentTime) / 1000;
+        }
+
+        //差分表示
         function countStart() {
-            setInterval(setTime, 50);
+            setInterval(countUpTime, 50);
         }
-        countStart();
 
+        countStart();
+        setTime();
+        stopButton.disabled = "";
+        startButton.disabled = "true";
     }
 
     //ストップの機能
     function stop() {
         console.log("ストップおしたよ");
+        stopButton.disabled = "true";
+        startButton.disabled = "false";
+
     }
 
     //イベントリスナーをまとめた
     startButton.onclick = start;
     stopButton.onclick = stop;
-    stopButton.onclick = init;
+    initButton.onclick = init;
 })();
