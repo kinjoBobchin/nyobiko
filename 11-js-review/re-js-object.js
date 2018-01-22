@@ -5,6 +5,7 @@
     //表示する画面の選択
     var display = document.getElementById("display-area");
     //startボタンを実装
+    var stop = document.getElementById("display-area");
     //stopボタンを実装
     //機能の定義：
     //①ボタンを押すと、時間が開始
