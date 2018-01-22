@@ -54,6 +54,8 @@
 
         countStart();
         setTime();
+
+        //スタートおした時、ボタンの状態：スタート→押せない、ストップ→押せる
         stopButton.disabled = "";
         startButton.disabled = "true";
     }
@@ -62,7 +64,7 @@
     function stop() {
         console.log("ストップおしたよ");
         stopButton.disabled = "true";
-        startButton.disabled = "false";
+        startButton.disabled = "";
 
     }
 
