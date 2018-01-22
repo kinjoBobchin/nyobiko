@@ -62,10 +62,11 @@
 
     //ストップの機能
     function stop() {
-        console.log("ストップおしたよ");
+
+
+        //スタートおした時、ボタンの状態：スタート→押せる、ストップ→押せない
         stopButton.disabled = "true";
         startButton.disabled = "";
-
     }
 
     //イベントリスナーをまとめた
