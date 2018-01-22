@@ -28,20 +28,20 @@
     var countUpId;
     //スタートの時間 - ストップの時間を足し上げて、ストップ機能を実装→https://dotinstall.com/lessons/stop_watch_js_v4/41207
     var timeToAdd;
-    //イベントリスナーをまとめた
+    //イベントリスナーとボタンを紐ずけ
     startButton.onclick = start;
     stopButton.onclick = stop;
     initButton.onclick = init;
 
     //表示する時間
     function showDisplay(time) {
-        console.log(time)
-        if (1000 <= time && time <= 3000) {
-            display.innerText = time + "秒" + "惜しいぞ鬼太郎 m9( ◯ )";
+        if (0 >= time) {
+            display.innerText = "いくぞ鬼太郎";
+        } else if(3999 <= time && time <= 4000){
+            display.innerText = time / 1000+ "秒" + "さすがじゃ鬼太郎";
         } else {
-            display.innerText = time + "秒" + "さすがじゃ鬼太郎 m9( ◯ )";
+            display.innerText = time / 1000 + "秒" + "まだまだじゃな";
         }
-        display.innerText = time / 1000;
     }
 
     //初期状態は、ストップウォッチが0の状態を表示
@@ -80,11 +80,12 @@
 
     //ストップの機能
     function stop() {
-        //ToDo
         //countStart()を止める
         clearTimeout(countUpId);
         //スタート時間に、前回とめた時間を追加する
         timeToAdd += Date.now() - initTime;
+        //ストップを押した時に、判定を追加する
+        showDisplay(timeToAdd);
         //スタートおした時、ボタンの状態：スタート→押せる、ストップ→押せない
         stopButton.disabled = "true";
         startButton.disabled = "";
