@@ -28,7 +28,7 @@
     var countUpId;
     //スタートの時間 - ストップの時間を足し上げて、ストップ機能を実装→https://dotinstall.com/lessons/stop_watch_js_v4/41207
     var timeToAdd;
-    //イベントリスナーをまとめた
+    //イベントリスナーとボタンを紐ずけ
     startButton.onclick = start;
     stopButton.onclick = stop;
     initButton.onclick = init;
