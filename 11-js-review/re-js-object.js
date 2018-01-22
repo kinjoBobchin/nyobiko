@@ -12,9 +12,14 @@
     //initボタン
     var initButton = document.getElementById("init-button");
     //初期の時間
-    var currentTime = 0;
+    var initTime;
+    //カウントアップする時間
+    var countUpTime;
     //countUpIdを定義して、カウントしている時間を止める
-    var countUpId = 0;
+    var countUpId;
+    //スタートの時間 - ストップの時間を足し上げて、ストップ機能を実装
+    //詳しい説明はここhttps://dotinstall.com/lessons/stop_watch_js_v4/41207
+    var timeToAdd;
 
     //機能の定義：
     //①ボタンを押すと、時間が開始
@@ -25,34 +30,41 @@
     //答えとのギャップ、答え→start,stopのファンクションを作っている、自分→いきなりfunctionの中にまとめようとしている
     //いろいろ、機能を作る→あとでオブジェクトとしてまとめたほうが良さそう
 
+    //表示する時間
+    function showDisplay(time) {
+        display.innerText = time;
+    }
+
     //初期状態は、ストップウォッチが0の状態を表示
     function init() {
-        currentTime = 0;
-        display.innerText = currentTime;
+        initTime = 0;
+        countUpTime = 0;
+        timeToAdd = 0;
+        showDisplay(initTime);
         stopButton.disabled = "true";
+        initButton.disabled = "true";
     }
 
     //起点となる時間の取得
     function startTime() {
-        currentTime = Date.now();
+        initTime = Date.now();
         countUp();
     }
 
     //時間をはかる
     function countUp() {
         countUpId = setTimeout(function () {
-            var countUpTime = Date.now() - currentTime;
+            countUpTime = Date.now() - initTime + timeToAdd;
             countUp();
-            display.innerText = countUpTime;
+            showDisplay(countUpTime);
         }, 10);
     }
 
 
     //スタートの機能
     function start() {
-
+        //スタートボタンを押したら発動する
         startTime();
-
         //スタートおした時、ボタンの状態を変化：スタート→押せない、ストップ→押せる
         stopButton.disabled = "";
         startButton.disabled = "true";
@@ -63,11 +75,15 @@
         //ToDo
         //countStart()を止める
         clearTimeout(countUpId);
+        //スタート時間に、前回とめた時間を追加する
+        timeToAdd += Date.now() - initTime;
+        console.log(timeToAdd)
         //判定結果を表示する
 
         //スタートおした時、ボタンの状態：スタート→押せる、ストップ→押せない
         stopButton.disabled = "true";
         startButton.disabled = "";
+        initButton.disabled = "";
     }
 
     //イベントリスナーをまとめた
