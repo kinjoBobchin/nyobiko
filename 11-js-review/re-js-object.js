@@ -1,4 +1,13 @@
-//何かキーを押すと、時間あてゲームが停止する
+//要件：何かキーを押すと、時間あてゲームが停止する
+
+//機能の定義：
+//①ボタンを押すと、時間が開始
+//②画面に、現在の時間が表示され、ダイアログで5秒で止めようと表示する
+//③ストップボタンを押す
+//④誤差-0.5秒以内→「すごい」、ちょうど「凄すぎワロタ」、それ以外→「おしい」
+
+//答えとのギャップ、答え→start,stopのファンクションを作っている、自分→いきなりfunctionの中にまとめようとしている
+//いろいろ、機能を作る→あとでオブジェクトとしてまとめたほうが良さそう
 
 (function(){
     'use strict';
@@ -19,19 +28,20 @@
     var countUpId;
     //スタートの時間 - ストップの時間を足し上げて、ストップ機能を実装→https://dotinstall.com/lessons/stop_watch_js_v4/41207
     var timeToAdd;
-
-    //機能の定義：
-    //①ボタンを押すと、時間が開始
-    //②画面に、現在の時間が表示され、ダイアログで5秒で止めようと表示する
-    //③ストップボタンを押す
-    //④誤差-0.5秒以内→「すごい」、ちょうど「凄すぎワロタ」、それ以外→「おしい」
-
-    //答えとのギャップ、答え→start,stopのファンクションを作っている、自分→いきなりfunctionの中にまとめようとしている
-    //いろいろ、機能を作る→あとでオブジェクトとしてまとめたほうが良さそう
+    //イベントリスナーをまとめた
+    startButton.onclick = start;
+    stopButton.onclick = stop;
+    initButton.onclick = init;
 
     //表示する時間
     function showDisplay(time) {
-        display.innerText = time;
+        console.log(time)
+        if (1000 <= time && time <= 3000) {
+            display.innerText = time + "秒" + "惜しいぞ鬼太郎 m9( ◯ )";
+        } else {
+            display.innerText = time + "秒" + "さすがじゃ鬼太郎 m9( ◯ )";
+        }
+        display.innerText = time / 1000;
     }
 
     //初期状態は、ストップウォッチが0の状態を表示
@@ -59,7 +69,6 @@
         }, 10);
     }
 
-
     //スタートの機能
     function start() {
         //スタートボタンを押したら発動する
@@ -76,19 +85,11 @@
         clearTimeout(countUpId);
         //スタート時間に、前回とめた時間を追加する
         timeToAdd += Date.now() - initTime;
-        console.log(timeToAdd)
-        //判定結果を表示する
-
         //スタートおした時、ボタンの状態：スタート→押せる、ストップ→押せない
         stopButton.disabled = "true";
         startButton.disabled = "";
         initButton.disabled = "";
     }
-
-    //イベントリスナーをまとめた
-    startButton.onclick = start;
-    stopButton.onclick = stop;
-    initButton.onclick = init;
 
     //初期の状態を呼び出し
     init();
