@@ -23,7 +23,8 @@
         // display.innerText = currentTime;
         console.log("ボタン反応してるよ");
     }
-    startButton.click(start);
+
+    startButton.onclick = start;
 
 
 })();
