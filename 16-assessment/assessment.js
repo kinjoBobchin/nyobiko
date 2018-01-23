@@ -11,6 +11,11 @@
             return; //名前が空の時は処理をしない =>　これをガード句という
         }
         console.log(userName);
+
+        //診断結果を表示するエリアを作成
+        const header = document.createElement("h4");
+        header.innerText = "診断結果";
+        resultDivided.appendChild(header);
     };
 
     const answers = [
