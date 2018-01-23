@@ -16,6 +16,11 @@
         const header = document.createElement("h4");
         header.innerText = "診断結果";
         resultDivided.appendChild(header);
+
+        const paragraph = document.createElement("p");
+        const result = assesment(userName);
+        paragraph.innerText = result;
+        resultDivided.appendChild(paragraph);
     };
 
     const answers = [
