@@ -5,7 +5,7 @@
     const resultDivided = document.getElementById("result-area");
     const tweetDivided = document.getElementById("tweet-area");
 
-    assessmentButton.onclick = function () {
+    assessmentButton.onclick = () => {
         console.log("ボタンが押されました");
     };
 
