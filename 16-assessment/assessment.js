@@ -1,5 +1,9 @@
 (function () {
     'use strict';
+    const userNameInput = document.getElementById("user-name");
+    const assessmentButton = document.getElementById("assesment");
+    const resultDivided = document.getElementById("result-area");
+    const tweetDivided = document.getElementById("tweet-area");
     const answers = [
         '{userName}のいいところは声です。{userName}の特徴的な声はみなを惹きつけ、心に残ります。',
         '{userName}のいいところはまなざしです。{userName}に見つめられた人は、気になって仕方がないでしょう。',
@@ -26,8 +30,8 @@
 
         const index = sumOfcharaCode % answers.length;
         let result = answers[index];
-        // result = result.replace(\/{userName\}/g, userName)
 
+        result = result.replace(\/{userName\}/g, userName)
         return result;
     }
     // テストコード 「入力と、正しい診断結果を出力する」処理が正しいかどうか
