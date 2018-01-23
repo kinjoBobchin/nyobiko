@@ -17,18 +17,18 @@
         '{userName}のいいところは気配りです。{userName}の配慮が多くの人を救っています。',
         '{userName}のいいところはその全てです。ありのままの{userName}自身がいいところなのです。',
         '{userName}のいいところは自制心です。やばいと思ったときにしっかりと衝動を抑えられる{userName}が皆から評価されています。'
-    ]
+    ];
     function assesment(userName) {
         let sumOfcharaCode = 0;
         for (let i = 0; i < userName.length; i++) {
             sumOfcharaCode = sumOfcharaCode + userName.charCodeAt(i);
         }
 
-        const index = sumOfcharaCode % answers.length
+        const index = sumOfcharaCode % answers.length;
         let result = answers[index];
         // result = result.replace(\/{userName\}/g, userName)
 
-        return result
+        return result;
     }
     // テストコード 「入力と、正しい診断結果を出力する」処理が正しいかどうか
     console.assert(
