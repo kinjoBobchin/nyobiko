@@ -8,7 +8,7 @@
     assessmentButton.onclick = () => {
         const userName = userNameInput.value;
         if (userName.length === 0) {
-            return; //名前が空の時は処理をしない
+            return; //名前が空の時は処理をしない =>　これをガード句という
         }
         console.log(userName);
     };
