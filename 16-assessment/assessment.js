@@ -6,7 +6,8 @@
     const tweetDivided = document.getElementById("tweet-area");
 
     assessmentButton.onclick = () => {
-        console.log("ボタンが押されました");
+        const userName = userNameInput.value;
+        console.log(userName);
     };
 
     const answers = [
