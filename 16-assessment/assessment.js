@@ -5,20 +5,20 @@
     const resultDivided = document.getElementById("result-area");
     const tweetDivided = document.getElementById("tweet-area");
 
+    function removeAllChildren(element) {
+        while (element.firstChild) { // 子どもの要素があるかぎり削除
+            element.removeChild(element.firstChild);
+        }
+    }
+
     assessmentButton.onclick = () => {
         const userName = userNameInput.value;
         if (userName.length === 0) {
             return; //名前が空の時は処理をしない =>　これをガード句という
         }
 
-
-        function removeAllChild(element) {
-            while (resultDivided.firstChild) { // 子どもの要素があるかぎり削除
-                resultDivided.removeChild(element.firstChild);
-            }
-        }
-
         //診断結果を表示するエリアを作成
+        removeAllChildren(resultDivided); //このコードの場所と順番は大事、resultDividedが生成されるよりも上にないといけない
         const header = document.createElement("h4");
         header.innerText = "診断結果";
         resultDivided.appendChild(header);
@@ -61,7 +61,7 @@
     }
     // テストコード 「入力と、正しい診断結果を出力する」処理が正しいかどうか
     console.assert(
-        assessment('太郎') === '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
+        assesment('太郎') === '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
         '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
     );
     // テストコード 「入力が同じ名前なら、同じ診断結果を出力する」処理が正しいかどうか
