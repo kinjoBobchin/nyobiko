@@ -27,6 +27,22 @@
         const result = assesment(userName);
         paragraph.innerText = result;
         resultDivided.appendChild(paragraph);
+
+        //todo ツイートエリアの作成
+        removeAllChildren(tweetDivided);
+        const anchor = document.createElement("a");
+        const hrefValue = "https://twitter.com/intent/tweet?button_hashtag=" + encodeURIComponent("あなたのいいところ") + "&ref_src=twsrc%5Etfw";
+        anchor.setAttribute("href", hrefValue);
+        anchor.className = "twitter-hashtag-button";
+        console.log(result);
+        anchor.setAttribute("data-text", result);
+        anchor.setAttribute("data-lang", "ja");
+        anchor.setAttribute("data-show-count", "false");
+        anchor.innerText = "#あなたのいいところ をツイートする";
+        tweetDivided.appendChild(anchor);
+
+        twttr.widgets.load(); //widgetsを読み込む
+
     };
 
     const answers = [
