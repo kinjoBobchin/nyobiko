@@ -17,8 +17,11 @@
             return; //名前が空の時は処理をしない =>　これをガード句という
         }
 
+        //連続生成されないように子要素を取得して削除
+        removeAllChildren(resultDivided); //このコードの場所と順番は大事、resultDividedが生成(27行目)されるよりも上にないといけない
+        removeAllChildren(tweetDivided); //このコードの場所と順番は大事、tweetDividedが生成(32行目)されるよりも上にないといけない
+
         //診断結果を表示するエリアを作成
-        removeAllChildren(resultDivided); //このコードの場所と順番は大事、resultDividedが生成されるよりも上にないといけない
         const header = document.createElement("h4");
         header.innerText = "診断結果";
         resultDivided.appendChild(header);
