@@ -34,7 +34,6 @@
         const hrefValue = "https://twitter.com/intent/tweet?button_hashtag=" + encodeURIComponent("あなたのいいところ") + "&ref_src=twsrc%5Etfw";
         anchor.setAttribute("href", hrefValue);
         anchor.className = "twitter-hashtag-button";
-        console.log(result);
         anchor.setAttribute("data-text", result);
         anchor.setAttribute("data-lang", "ja");
         anchor.setAttribute("data-show-count", "false");
