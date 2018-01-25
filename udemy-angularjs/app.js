@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngMessages']);
 
 myApp.controller('mainController', function($scope, $log, $filter) {
     console.log($log); //$logが何をしているかコンソールに出力する
