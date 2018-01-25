@@ -40,7 +40,7 @@
         anchor.innerText = "#あなたのいいところ をツイートする";
         tweetDivided.appendChild(anchor);
 
-        twttr.widgets.load(); //widgetsを読み込む
+        twttr.widgets.load(); //widgetsを読み込む エラーが出ているが、これを見て解決 => https://www.nnn.ed.nico/questions/4818
 
     };
 
