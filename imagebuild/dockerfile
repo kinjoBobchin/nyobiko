@@ -2,4 +2,4 @@ FROM docker/whalesay:latest
 
 RUN apt-get -y update && apt-get install -y fortunes
 
-CMD /usr/geme/fortuen | cowsay
+CMD /usr/games/fortune | cowsay
