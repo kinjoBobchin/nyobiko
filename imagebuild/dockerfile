@@ -1,0 +1,10 @@
+FROM docker/whalesay:latest
+
+RUN apt-get -y update && apt-get install -y fortunes
+
+CMD /usr/games/fortune | cowsay
+
+# dockerのpushの手順
+# ①dockerのイメージ作成
+# ②docker tagでタグ付けの時に、プッシュする時のDockerHubのリポジトリ名と一致させるとうまくいった
+# 例: dockerhubのリポジトリ名 kin(user名)/test = プッシュするイメージ名
