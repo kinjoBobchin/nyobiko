@@ -13,4 +13,6 @@ myApp.controller('mainController', function($scope, $log, $filter) {
 
     $log.log($scope.name);
     $log.log($scope.formattedName);
+    $scope.handle = "";
+    $log.info($scope.handle);
 });
