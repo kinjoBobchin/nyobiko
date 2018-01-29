@@ -7,4 +7,10 @@ myApp.controller('mainController', ['$scope', '$filter', function ($scope, $filt
         return $filter('lowercase')($scope.handle);
     };
 
+    $scope.$watch("handle",function (newValue, oldValue) {
+        console.log("更新されました");
+        console.log("新：" , newValue);
+        console.log("旧：" , oldValue);
+    });
+
 }]);
