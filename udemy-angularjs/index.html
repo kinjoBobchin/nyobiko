@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- angularをCDNから取得 -->
-    <script src="https://code.angularjs.org/1.6.8/angular.js"></script>
-    <script src="https://code.angularjs.org/1.5.0/angular-messages.js"></script>
-    <!-- コードはここにあり => https://code.angularjs.org/ -->
+    <script src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
     <script src="app.js"></script>
 </head>
 
@@ -35,28 +33,17 @@
 
     <div class="container">
         <div ng-controller="mainController">
-            <h1>こんにちわ！</h1>
+
+            <div>
+                <label>twitterのハンドルネームを入力してください：</label>
+                <input type="text" ng-model="handle" />
+            </div>
+
+            <hr />
+
+            <h1>twitter.com/{{lowercasehandle()}}</h1>
         </div>
     </div>
-
-    <form name="myForm">
-        <label>
-          Enter text:
-          <input type="text" ng-model="field" name="myField" required minlength="5" />
-        </label>
-        <div ng-messages="myForm.myField.$error" role="alert">
-          <div ng-message="required">未入力です</div>
-          <div ng-message="minlength, maxlength">
-            メールアドレスは5文字以上です
-          </div>
-        </div>
-      </form>
-      <div>
-          <h1>双方向バインディング</h1>
-        <input type="text" ng-model="handle">
-        <h3>https:/twitter/{{ handle }}</h3>
-      </div>
-
 
 </body>
 

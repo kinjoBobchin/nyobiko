@@ -1,18 +1,10 @@
-var myApp = angular.module('myApp', ['ngMessages']);
+var myApp = angular.module('myApp', []);
 
-myApp.controller('mainController', function($scope, $log, $filter) {
-    console.log($log); //$logが何をしているかコンソールに出力する
-    $log.log("テストですよ");
-    $log.debug("テストですよ");
-    $log.warn("テストですよ");
-    $log.info("テストですよ");
-    $log.error("テストですよ");
+myApp.controller('mainController', ['$scope', '$filter', function ($scope, $filter) {
 
-    $scope.name = "ken";
-    $scope.formattedName = $filter('uppercase')($scope.name);
+    $scope.handle = '';
+    $scope.lowercasehandle = function () {
+        return $filter('lowercase')($scope.handle);
+    };
 
-    $log.log($scope.name);
-    $log.log($scope.formattedName);
-    $scope.handle = "";
-    $log.info($scope.handle);
-});
+}]);
