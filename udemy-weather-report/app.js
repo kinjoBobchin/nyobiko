@@ -1,7 +1,7 @@
 // moduleの作成
 var weatherApp = angular.module('weatherApp', ['ngRoute','ngResource']);
 
-weatherApp.config(function($routeProvider) {
+weatherApp.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'src/home.html',
@@ -10,8 +10,8 @@ weatherApp.config(function($routeProvider) {
         .when('/forecast', {
             templateUrl: 'src/forecast.html',
             controller: 'forecastController'
-        })
-})
+        });
+});
 
 weatherApp.controller('homeController',['$scope', function ($scope) {
     
