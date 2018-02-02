@@ -22,10 +22,10 @@ weatherApp.service('cityService', function () {
 });
 
 //controller
-weatherApp.controller('homeController',['$scope',function($scope) {
+weatherApp.controller('homeController',['$scope','cityService',function($scope,cityService) {
 
 }]);
 
-weatherApp.controller('forecastController',['$scope',function($scope) {
+weatherApp.controller('forecastController',['$scope','cityService',function($scope,cityService) {
 
 }]);
