@@ -1,7 +1,7 @@
 // moduleの定義
 const weatherApp = angular.module('weatherApp',['ngRoute','ngResource']);
 
-//routeの作成
+//route
 weatherApp.config(function($routeProvider) {
     $routeProvider
 
@@ -16,8 +16,12 @@ weatherApp.config(function($routeProvider) {
     })
 })
 
+//service
+weatherApp.service('cityService', function () {
+    this.city = "Osaka";
+});
 
-//controllerの作成
+//controller
 weatherApp.controller('homeController',['$scope',function($scope) {
 
 }]);
