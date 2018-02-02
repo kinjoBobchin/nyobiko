@@ -32,4 +32,12 @@ weatherApp.controller('homeController',['$scope','cityService',function($scope,c
 
 weatherApp.controller('forecastController',['$scope','cityService',function($scope,cityService) {
     $scope.city = cityService.city;
+
+    $scope.weatherApi = $resource('http://api.openweathermap.org/data/2.5/forecast', {
+        callback: "JSON_CALLBACK"
+    }, {
+            get: {
+                method: "JSONP"
+            }
+    });
 }]);
