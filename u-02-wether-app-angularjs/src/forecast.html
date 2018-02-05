@@ -1,1 +1,18 @@
 {{ city }}の天気予報
+
+<div ng-repeat="weather in weatherResult.data.list">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{ weather.dt}}
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    気温： {{ weather.main.temp}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
