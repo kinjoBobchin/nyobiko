@@ -18,7 +18,7 @@ weatherApp.config(function ($routeProvider) {
         .when('/forecast/:days', {
             templateUrl: 'src/forecast.html',
             controller: 'forecastController'
-        })
+        });
 });
 
 //service
@@ -42,7 +42,6 @@ weatherApp.controller('forecastController', ['$scope', 'cityService', '$resource
 
     // 何日分のデータをとってくるかをパラメで受け取る
     $scope.days = $routeParams.days || 2;
-    $log.info($routeParams)
 
     // trustAsResourceUrlにいれるまでは、まだセキュアなURLとして使用できない
     const unTrustedUrl = 'http://api.openweathermap.org/data/2.5/forecast/';
@@ -58,11 +57,10 @@ weatherApp.controller('forecastController', ['$scope', 'cityService', '$resource
     const promise = $http.jsonp($sce.trustAsResourceUrl(unTrustedUrl + '?' + params));
     promise.then(function(jsonp){
         $scope.weatherResult = jsonp;
-        console.log(jsonp);
     });
 
-    $scope.convertDate = function(date) {
+    $scope.convertDate = function (date) {
         return new Date(date * 1000);
-    }
+    };
 
 }]);
