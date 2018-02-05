@@ -1,4 +1,8 @@
-{{ city }}の天気予報
+{{ city }}の3時間おきの天気予報
+
+<a href="#!/forecast/2">6時間先</a> |
+<a href="#!/forecast/4">12時間先</a> |
+<a href="#!/forecast/6">18時間先</a>
 
 <div ng-repeat="weather in weatherResult.data.list">
     <div class="row">
