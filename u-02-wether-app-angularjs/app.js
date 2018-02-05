@@ -13,7 +13,12 @@ weatherApp.config(function ($routeProvider) {
         .when('/forecast', {
             templateUrl: 'src/forecast.html',
             controller: 'forecastController'
-        });
+        })
+
+        .when('/forecast/:days', {
+            templateUrl: 'src/forecast.html',
+            controller: 'forecastController'
+        })
 });
 
 //service
@@ -30,20 +35,24 @@ weatherApp.controller('homeController',['$scope','cityService',function($scope,c
     });
 }]);
 
-weatherApp.controller('forecastController', ['$scope', 'cityService', '$resource', '$http', '$sce', '$httpParamSerializerJQLike',function($scope, cityService, $resource, $http, $sce, $httpParamSerializerJQLike) {
+weatherApp.controller('forecastController', ['$scope', 'cityService', '$resource', '$http', '$sce', '$httpParamSerializerJQLike', '$routeParams', '$log',function ($scope, cityService, $resource, $http, $sce, $httpParamSerializerJQLike, $routeParams, $log) {
 
     // サービスで受け取った街を使えるように代入
     $scope.city = cityService.city;
+
+    // 何日分のデータをとってくるかをパラメで受け取る
+    $scope.days = $routeParams.days || 2;
+    $log.info($routeParams)
 
     // trustAsResourceUrlにいれるまでは、まだセキュアなURLとして使用できない
     const unTrustedUrl = 'http://api.openweathermap.org/data/2.5/forecast/';
 
     // unTrustedUrlにくっつけるパラメータを定義
-    let params = $httpParamSerializerJQLike({
-        q: $scope.city,
-        cnt: 2,
+    const params = $httpParamSerializerJQLike({
+        q: $scope.city + ",jp", //検索した都市名に国名をくっつけている
+        cnt: $scope.days,
         units: 'metric',
-        appid: ''
+        appid: 'f09ccf28addde6486effcc15c32bfaf6'
     });
 
     const promise = $http.jsonp($sce.trustAsResourceUrl(unTrustedUrl + '?' + params));
