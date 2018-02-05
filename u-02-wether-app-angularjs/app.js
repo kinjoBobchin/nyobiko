@@ -52,4 +52,8 @@ weatherApp.controller('forecastController', ['$scope', 'cityService', '$resource
         console.log(jsonp);
     });
 
+    $scope.convertDate = function(date) {
+        return new Date(date * 1000);
+    }
+
 }]);
