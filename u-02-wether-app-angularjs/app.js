@@ -41,7 +41,7 @@ weatherApp.controller('forecastController', ['$scope', 'cityService', '$resource
     $scope.city = cityService.city;
 
     // 何日分のデータをとってくるかをパラメで受け取る
-    $scope.days = $routeParams.days || 2;
+    $scope.days = $routeParams.days || '2';
 
     // trustAsResourceUrlにいれるまでは、まだセキュアなURLとして使用できない
     const unTrustedUrl = 'http://api.openweathermap.org/data/2.5/forecast/';
