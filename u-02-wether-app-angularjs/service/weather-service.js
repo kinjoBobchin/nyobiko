@@ -1,6 +1,6 @@
 // open weatherのサイトからAPIで天気情報をとってくる
 
-weaterApp.service('weatherService', function () {
+weatherApp.service('weatherService',['$http','$sce','$httpParamSerializerJQLike', function ($http, $sce, $httpParamSerializerJQLike) {
 
     // trustAsResourceUrlにいれるまでは、まだセキュアなURLとして使用できない
     const unTrustedUrl = 'http://api.openweathermap.org/data/2.5/forecast/';
@@ -18,4 +18,4 @@ weaterApp.service('weatherService', function () {
         $scope.weatherResult = jsonp;
     });
 
-});
+}]);
