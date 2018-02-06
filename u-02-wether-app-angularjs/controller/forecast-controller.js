@@ -1,4 +1,4 @@
-weatherApp.controller('forecastController', ['$scope', 'cityService', '$routeParams',function ($scope, cityService, $routeParams) {
+weatherApp.controller('forecastController', ['$scope', 'cityService', 'weatherService','$routeParams',function ($scope, cityService, weatherService, $routeParams) {
 
     // サービスで受け取った街を使えるように代入
     $scope.city = cityService.city;
