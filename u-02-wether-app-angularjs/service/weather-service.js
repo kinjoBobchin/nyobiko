@@ -15,9 +15,10 @@ weatherApp.service('weatherService',['$http','$sce','$httpParamSerializerJQLike'
             appid: 'f09ccf28addde6486effcc15c32bfaf6'
         });
 
+        var weatherResult = {};
         const promise = $http.jsonp($sce.trustAsResourceUrl(unTrustedUrl + '?' + params));
         promise.then(function(jsonp){
-            weatherResult = jsonp;
+            return weatherResult = jsonp;
         });
 
     };
