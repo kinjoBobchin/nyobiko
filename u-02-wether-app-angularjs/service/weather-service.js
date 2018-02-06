@@ -2,7 +2,7 @@
 
 weatherApp.service('weatherService',['$http','$sce','$httpParamSerializerJQLike', function ($http, $sce, $httpParamSerializerJQLike) {
 
-    this.getWeather = function(){
+    this.getWeather = function(city, days){
 
         // trustAsResourceUrlにいれるまでは、まだセキュアなURLとして使用できない
         const unTrustedUrl = 'http://api.openweathermap.org/data/2.5/forecast/';
@@ -15,7 +15,6 @@ weatherApp.service('weatherService',['$http','$sce','$httpParamSerializerJQLike'
             appid: 'f09ccf28addde6486effcc15c32bfaf6'
         });
 
-        var weatherResult = {};
         const promise = $http.jsonp($sce.trustAsResourceUrl(unTrustedUrl + '?' + params));
         promise.then(function(jsonp){
             return weatherResult = jsonp;
