@@ -1,4 +1,4 @@
-weatherApp.controller('forecastController', ['$scope', 'cityService', '$resource', '$http', '$sce', '$httpParamSerializerJQLike', '$routeParams', '$log',function ($scope, cityService, $resource, $http, $sce, $httpParamSerializerJQLike, $routeParams, $log) {
+weatherApp.controller('forecastController', ['$scope', 'cityService', '$routeParams',function ($scope, cityService, $routeParams) {
 
     // サービスで受け取った街を使えるように代入
     $scope.city = cityService.city;
