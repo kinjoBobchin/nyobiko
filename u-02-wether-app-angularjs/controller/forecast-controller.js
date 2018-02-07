@@ -7,7 +7,6 @@ weatherApp.controller('forecastController', ['$scope', 'cityService', 'weatherSe
     $scope.days = $routeParams.days || '2';
 
     $scope.weatherResult = weatherService.getWeather($scope.city, $scope.days);
-    console.log($scope.weatherResult);
 
     $scope.convertDate = function (date) {
         return new Date(date * 1000);
