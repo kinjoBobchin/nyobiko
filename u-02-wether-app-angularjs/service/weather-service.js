@@ -1,6 +1,6 @@
 // open weatherのサイトからAPIで天気情報をとってくる
 
-weatherApp.service('weatherService',['$http','$sce','$httpParamSerializerJQLike','$resource', function ($http, $sce, $httpParamSerializerJQLike, $resource) {
+weatherApp.service('weatherService',['$resource', function ($resource) {
 
     this.getWeather = function(city, days){
 
