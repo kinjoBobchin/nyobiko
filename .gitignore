@@ -3,3 +3,4 @@
 *.json
 *.envrc
 node_modules/
+yarn.lock
