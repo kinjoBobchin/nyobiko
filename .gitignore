@@ -2,3 +2,4 @@
 
 *.json
 *.envrc
+node_modules/
