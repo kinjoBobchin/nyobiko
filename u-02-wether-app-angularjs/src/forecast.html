@@ -14,22 +14,16 @@
             18時間先
         </md-nav-item>
     </md-nav-bar>
-      <div ng-repeat="weather in weatherResult.list">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            {{ convertDate(weather.dt) | date: "yyyy年MM月dd日 HH時mm分"}}
-                        </h3>
-                    </div>
-                    <div class="panel-body">
-                        気温： {{ weather.main.temp | number: 1}}度
-                    </div>
+      <md-content ng-repeat="weather in weatherResult.list">
+        <md-list flex>
+            <md-list-item class="md-2-line">
+                <div class="md-list-item-text">
+                    <h3>{{ convertDate(weather.dt) | date: "yyyy年MM月dd日 HH時mm分"}}</h3>
+                    <p>気温： {{ weather.main.temp | number: 1}}度</p>
                 </div>
-            </div>
-        </div>
-    </div>
+            </md-list-item>
+        </md-list>
+    </md-content>
     <md-button ng-href="#!/">
         <md-icon>redo</md-icon>
         検索に戻る
