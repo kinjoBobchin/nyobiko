@@ -14,6 +14,15 @@
     <script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.6.9/angular-route.min.js"></script>
     <script src="https://code.angularjs.org/1.6.9/angular-resource.min.js"></script>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
     <script src="app.js"></script>
     <script src="route.js"></script>
     <script src="src/service/city-service.js"></script>
@@ -23,21 +32,20 @@
 </head>
 <body>
     <header>
-            <nav class="navbar navbar-default">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#!/">AngularJS天気予報</a>
-                        <i class="material-icons">android</i>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#!/"><i class="fa fa-home"></i> Home</a></li>
-                    </ul>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#!/">AngularJS天気予報</a>
+                    <i class="material-icons">android</i>
                 </div>
-            </nav>
-        </header>
-
-        <div class="container">
-            <div ng-view></div>
-        </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#!/"><i class="fa fa-home"></i> Home</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div ng-view></div>
+    </div>
 </body>
 </html>
