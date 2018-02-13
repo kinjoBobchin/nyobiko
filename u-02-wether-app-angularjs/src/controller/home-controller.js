@@ -1,5 +1,5 @@
 //controller
-weatherApp.controller('homeController',['$location','$scope','cityService',function($location,$scope, cityService) {
+weatherApp.controller('homeController',['$location','$scope','cityService',function($location, $scope, cityService) {
     $scope.city = cityService.city;
 
     $scope.$watch('city', function (newCity) {
@@ -7,6 +7,6 @@ weatherApp.controller('homeController',['$location','$scope','cityService',funct
     });
 
     $scope.submit = function () {
-        $location.path('/forecast');
+        $location.path('/forecast/2');
     };
 }]);
