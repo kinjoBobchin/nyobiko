@@ -1,2 +1,5 @@
 # setting.jsonファイルはpushしない
 *.json
+
+# node_modulesの中身はアップしない
+*/node_modules
