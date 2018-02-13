@@ -1,4 +1,4 @@
-weatherApp.controller('forecastController', ['$scope', 'cityService', 'weatherService','$routeParams',function ($scope, cityService, weatherService, $routeParams) {
+weatherApp.controller('forecastController', ['$scope', 'cityService', 'weatherService','$routeParams','$location',function ($scope, cityService, weatherService, $routeParams,$location) {
 
     // サービスで受け取った街を使えるように代入
     $scope.city = cityService.city;
@@ -12,6 +12,10 @@ weatherApp.controller('forecastController', ['$scope', 'cityService', 'weatherSe
         return new Date(date * 1000);
     };
 
-    $scope.currentNavItem = '6hour';
+    $scope.currentNavItem = $routeParams.days;
+
+    $scope.goto = function(page) {
+        $location.path('/forecast/' + $routeParams.days);
+    };
 
 }]);
