@@ -12,4 +12,6 @@ weatherApp.controller('forecastController', ['$scope', 'cityService', 'weatherSe
         return new Date(date * 1000);
     };
 
+    $scope.currentNavItem = '6hour';
+
 }]);

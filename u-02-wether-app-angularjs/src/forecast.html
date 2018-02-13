@@ -1,24 +1,49 @@
-<a href="#!/">検索に戻る</a>
-<br>
-{{ city }}の3時間おきの天気予報
-
-<a href="#!/forecast/2" ng-class="{ 'bg-primary': days === '2' }">6時間先</a> |
-<a href="#!/forecast/4" ng-class="{ 'bg-primary': days === '4' }">12時間先</a> |
-<a href="#!/forecast/6" ng-class="{ 'bg-primary': days === '6' }">18時間先</a>
-
-<div ng-repeat="weather in weatherResult.list">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        {{ convertDate(weather.dt) | date: "yyyy年MM月dd日 HH時mm分"}}
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    気温： {{ weather.main.temp | number: 1}}度
+<md-content layout="column" layout-align="center center">
+    <h2>{{ city }}の3時間おきの天気予報</h2>
+    <!-- <md-nav-bar
+        md-selected-nav-item="currentNavItem"
+        nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-href="#!/forecast/2" md-nav-click="goto('6hour')" name="6hour">
+            6時間先
+        </md-nav-item>
+        <md-nav-item md-nav-href="#!/forecast/4" name="12hour">
+            12時間先
+        </md-nav-item>
+        <md-nav-item md-nav-href="#!/forecast/6" name="18hour">
+            18時間先
+        </md-nav-item>
+      </md-nav-bar> -->
+    <md-nav-bar
+        md-selected-nav-item="currentNavItem"
+        nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-href="#!/forecast/2" name="6hour">
+            6時間後
+        </md-nav-item>
+        <md-nav-item md-nav-href="#!/forecast/4" name="12hour">
+            12時間後
+        </md-nav-item>
+        <md-nav-item md-nav-href="#!/forecast/6" name="18hour">
+            18時間後
+        </md-nav-item>
+    </md-nav-bar>
+      <div ng-repeat="weather in weatherResult.list">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            {{ convertDate(weather.dt) | date: "yyyy年MM月dd日 HH時mm分"}}
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        気温： {{ weather.main.temp | number: 1}}度
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <md-button ng-href="#!/">
+        <md-icon>redo</md-icon>
+        検索に戻る
+    </md-button>
+</md-content>
