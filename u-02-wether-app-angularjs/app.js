@@ -1,2 +1,11 @@
 // moduleの定義
-const weatherApp = angular.module('weatherApp',['ngRoute','ngResource','ngMaterial']);
+const weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource', 'ngMaterial']);
+
+weatherApp.directive('headerToolbar', function () {
+        // ディレクティブはオブジェクトを返す
+    return {
+        restrict: 'E',
+        templateUrl: 'src/directives/header-toolbar.html',
+        replace: true
+    };
+});
