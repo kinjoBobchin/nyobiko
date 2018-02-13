@@ -3,3 +3,6 @@
 
 # node_modulesの中身はアップしない
 */node_modules
+
+# APIトークンを隠蔽できるようにする
+*.envrc
