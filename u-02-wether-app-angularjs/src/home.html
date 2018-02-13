@@ -1,9 +1,13 @@
-<div layout="column" layout-align="center center">
+<md-content layout="column" layout-align="center center">
     <h2>地名をアルファベットで入力してください</h2>
-    <form ng-submit="submit()" layout="column" layout-align="center center">
-        <md-input-container>
-            <input ng-model="city" type="text" placeholder="例：Okinawa" md-autofocus required>
+    <form ng-submit="submit()" layout="column" layout-align="center center" name="weatherForm">
+        <md-input-container class="md-block">
+            <input ng-model="city" type="text" placeholder="例：Okinawa" name="weather" required md-maxlength="20">
+            <ng-messages for="weatherForm.weather.$error">
+                <div ng-message="required">ボックスが空です</div>
+                <div ng-message="md-maxlength">文字数が多いです</div>
+            </ng-messages>
         </md-input-container>
         <md-button type="submit" class="md-raised">予報を見る</md-button>
     </form>
-</div>
+</md-content>
