@@ -1,2 +1,2 @@
 // moduleの定義
-const weatherApp = angular.module('weatherApp',['ngRoute','ngResource']);
+const weatherApp = angular.module('weatherApp',['ngRoute','ngResource','ngMaterial']);
