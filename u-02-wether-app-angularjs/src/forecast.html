@@ -1,29 +1,17 @@
 <md-content layout="column" layout-align="center center">
     <h2>{{ city }}の3時間おきの天気予報</h2>
-    <!-- <md-nav-bar
+    <md-nav-bar
+        md-no-ink-bar="disableInkBar"
         md-selected-nav-item="currentNavItem"
         nav-bar-aria-label="navigation links">
-        <md-nav-item md-nav-href="#!/forecast/2" md-nav-click="goto('6hour')" name="6hour">
+        <md-nav-item md-nav-href="#!/forecast/2" name="2">
             6時間先
         </md-nav-item>
-        <md-nav-item md-nav-href="#!/forecast/4" name="12hour">
+        <md-nav-item md-nav-href="#!/forecast/4" name="4">
             12時間先
         </md-nav-item>
-        <md-nav-item md-nav-href="#!/forecast/6" name="18hour">
+        <md-nav-item md-nav-href="#!/forecast/6" name="6">
             18時間先
-        </md-nav-item>
-      </md-nav-bar> -->
-    <md-nav-bar
-        md-selected-nav-item="currentNavItem"
-        nav-bar-aria-label="navigation links">
-        <md-nav-item md-nav-href="#!/forecast/2" name="6hour">
-            6時間後
-        </md-nav-item>
-        <md-nav-item md-nav-href="#!/forecast/4" name="12hour">
-            12時間後
-        </md-nav-item>
-        <md-nav-item md-nav-href="#!/forecast/6" name="18hour">
-            18時間後
         </md-nav-item>
     </md-nav-bar>
       <div ng-repeat="weather in weatherResult.list">
