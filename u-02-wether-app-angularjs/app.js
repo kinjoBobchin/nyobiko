@@ -9,3 +9,13 @@ weatherApp.directive('headerToolbar', function () {
         replace: true
     };
 });
+
+
+weatherApp.config(function($mdThemingProvider) {
+    $mdThemingProvider
+        .theme('default')
+        .primaryPalette('indigo')
+        .accentPalette('pink')
+        .warnPalette('red')
+        .backgroundPalette('grey')
+});
