@@ -1,0 +1,7 @@
+<md-content layout="column" layout-align="center center">
+    <h2>色の設定</h2>
+    <span>テーマカラー</span>
+    <md-select ng-model="themeColor" placeholder="color" class="md-no-underline">
+        <md-option ng-repeat="color in colors" ng-value="color.settingvalue">{{color.name}}</md-option>
+    </md-select>
+</md-content>
