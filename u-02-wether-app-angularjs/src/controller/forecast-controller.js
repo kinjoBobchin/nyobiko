@@ -8,13 +8,13 @@ weatherApp.controller('forecastController', ['$scope', 'cityService', 'weatherSe
 
     $scope.weatherResult = weatherService.getWeather($scope.city, $scope.days);
 
-    $scope.convertDate = function (date) {
+    $scope.convertDate = (date) => {
         return new Date(date * 1000);
     };
 
     $scope.currentNavItem = $routeParams.days;
 
-    $scope.goto = function(page) {
+    $scope.goto = (page) => {
         $location.path('/forecast/' + $routeParams.days);
     };
 
