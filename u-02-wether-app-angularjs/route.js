@@ -14,7 +14,7 @@ weatherApp.config(function ($routeProvider) {
 
         .when('/settings/color', {
             templateUrl: 'src/settings-color.html',
-            controller: 'configController'
+            config: 'settingsController'
         })
 
         .when('/forecast/:days', {
