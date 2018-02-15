@@ -2,8 +2,18 @@
     <div class="md-toolbar-tools">
         <md-button href="#!/" aria-label="天気予報">天気予報</md-button>
         <span class="flex"></span>
-        <md-button href="#!/" aria-label="home" class="md-icon-button">
-            <md-icon>home</md-icon>
-        </md-button>
+        <md-menu-bar>
+            <md-menu>
+                <md-button href="#!/" aria-label="home" class="md-icon-button" ng-mouseover="$mdMenu.open()">
+                    <md-icon>settings</md-icon>
+                </md-button>
+                <md-menu-content>
+                    <md-menu-item class="md-indent">
+                        <md-icon>palette</md-icon>
+                        <md-button ng-href="#!/">色変更</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-menu-bar>
     </div>
 </md-toolbar>
