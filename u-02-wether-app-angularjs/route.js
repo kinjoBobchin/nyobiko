@@ -12,6 +12,11 @@ weatherApp.config(function ($routeProvider) {
             controller: 'forecastController'
         })
 
+        .when('/settings/color', {
+            templateUrl: 'src/forecast.html',
+            controller: 'forecastController'
+        })
+
         .when('/forecast/:days', {
             templateUrl: 'src/forecast.html',
             controller: 'forecastController'
