@@ -5,6 +5,8 @@
 
 
 ## 環境構築
+0. webpack-tutorial(名前は適当でいいです)フォルダを作成する
+
 1. nodeとnpmがインストールされているか確かめる
 
 ~~~
@@ -76,4 +78,163 @@ srcにあるファイルを吸い上げ => distフォルダに吐き出すイメ
 
 node_modules、.vscodeを追加すると、設定や変更をするたびに何かとうざくならない
 
-7. 
+7. 試しに、webpackの動きを確かめてみる準備
+
+srcで吸い上げ→バンドル→distに吐き出すのをwebpackを使ってやってみます
+
+ファイル構成を下記のようにしました。
+
+~~~
+.
+├── dist
+├── src
+│   └── app.js
+└── webpack.config.js
+~~~
+
+※ node_modules、package-lock.json、package.jsonは関係ないので除外してます
+
+app.jsに「console.log("hello,webpack");」
+とだけ書いて保存してます
+
+
+ツリーコマンドは下記のようにすると、確認できました
+~~~
+$ tree -I 'node_modules'
+~~~
+
+※ -I はnode_modulesを除外するために追加してます
+
+ツリーコマンドは下記のサイトを参考にしました
+<https://qiita.com/koshihikari/items/0906cd8e97b931714efe>
+
+8. webpackの動きを確かめる
+
+~~~
+$ webpack ./src/app.js ./dist/app.bundle.js
+~~~  
+コマンド解説
+webpackコマンドで、「./src/app.js」にあるファイルを「./dist/app.bundle.js」のように、distフォルダにapp.bundle.jsとして吐き出す
+
+↓  
+
+~~~
+.
+├── dist
+│   └── app.bundle.js
+├── src
+│   └── app.js
+└── webpack.config.js
+~~~
+
+app.bundle.jsは暗号みたいだが、ちゃんと最後の行あたりに,app.jsの中身がバンドルされて出力されている
+
+~~~
+(省略)
+/***/ (function(module, exports) {
+
+console.log("hello,webpack");
+
+/***/ })
+/******/ ]);
+~~~
+
+これでwebpackのhelloworld完了
+
+9. minifyのコマンド
+
+さっきのコマンドに -p をつけると、minifyされたファイルが出力されます(minifyが何かはわかってない)
+~~~
+$ webpack ./src/app.js ./dist/app.bundle.js -p
+~~~
+
+10. watchモードの使用
+
+さらに、さっきのコマンドに --watch をつけると、watchモードで minifyされたファイルが出力されます(minifyが何かはわかってない)
+
+これで、app.jsの中身を変更して保存すると、コマンドをうたなくても、app.bundle.jsの中身が変更されます(素晴らしい)
+~~~
+$ webpack ./src/app.js ./dist/app.bundle.js -p --watch
+~~~
+
+ターミナルがwatchモードから抜け出すには ctrl + Cで抜けれます
+
+11. webpack.config.jsに書き出す
+
+毎回、コマンドを打つのは大変だし、webpack同士のコンフリクト（衝突）にもつながるので
+webpack.config.jsに書き出しましょう
+~~~
+//webpack.config.js
+
+module.exports = {
+    entry: './src/app.js',
+    output: {
+        filename: './dist/app.bundle.js'
+    }
+}
+~~~
+さっきのコマンドのコピペで大丈夫です
+
+12. package.jsonにコマンドにwebpackの実行コマンドを書く
+
+"scripts"にあるコマンドで、実行出来るように書き換える
+
+~~~
+//package.json
+(省略)
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+(省略)
+~~~
+↓
+~~~
+//package.json
+(省略)
+"scripts": {
+    "dev": "webpack -d --watch"
+  },
+(省略)
+~~~
+
+コマンドの解説
+webpackを「-d」developモード、「watch」モードで実行する
+
+13. npm run dev　でフィニッシュです
+
+webpack.config.jsとpackage.jsonに書いた内容を実行するコマンド
+~~~
+$ npm run dev
+~~~
+
+「10 .watchモードの使用」で使ったコマンドと同様の結果が得られるようになりました。
+
+~~~
+$ webpack ./src/app.js ./dist/app.bundle.js -p --watch
+~~~
+
+14. prodモードも追加しておきましょう
+
+~~~
+//package.json
+(省略)
+"scripts": {
+    "dev": "webpack -d --watch"
+  },
+(省略)
+~~~
+↓
+~~~
+//package.json
+(省略)
+"scripts": {
+    "dev": "webpack -d --watch",
+    "prod": "webpack -p"
+  },
+(省略)
+~~~
+
+# 感想
+Qiitaとかでwebpackの解説をしているものとかあるが、この動画見ながら
+webpackを一から設定していくほうがわかりやすいし、
+思ったよりもnpmと、package.jsonを使うなと思った。
