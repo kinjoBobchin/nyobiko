@@ -2,7 +2,7 @@
 ![webpack](https://webpack.js.org/cd0bb358c45b584743d8ce4991777c42.svg "サンプル")
 
 ## やりたいこと
-・webpackをQiitaとかで理解しようと努めたけど、わからなかった
+・webpackをQiitaとかで理解しようと努めたけど、わからなかった  
 ・だけど便利なのは知っているから、わかりたい。
 
 ## このチュートリアルの所要時間
@@ -32,14 +32,14 @@
 $ cd webpack-tutorial/
 ~~~
   
-###1. nodeとnpmがインストールされているか確かめる
+### 1. nodeとnpmがインストールされているか確かめる
 
 ~~~
 $ node -v
 $ npm -v
 ~~~
 
-###2. npm の初期化をする
+### 2. npm の初期化をする
 
 ~~~
 $ npm init
@@ -49,7 +49,7 @@ $ npm init
 
 ここに基本情報が書いてある
 
-###3. webpackを使用するコマンド
+### 3. webpackを使用するコマンド
 
 ~~~
 $ npm i -D webpack
@@ -62,7 +62,7 @@ $ npm i -D webpack
 $ npm i -g webpack
 ~~~
 
-###4. webpackを使用を確認するコマンド
+### 4. webpackを使用を確認するコマンド
 
 使用可能なwebpackのバージョンを確認出来る(現在の最新は"4.0.0-beta.1")
 ~~~
@@ -79,7 +79,7 @@ $ npm view webpack versions --json
 $ npm view webpack version
 ~~~
 
-###5. 使用したいバージョンを指定する場合
+### 5. 使用したいバージョンを指定する場合
 
 ~~~
 $ npm i -D webpack@3.11.0
@@ -94,7 +94,7 @@ $ npm i -D webpack@3.11.0
   }
 ~~~
 
-###6. srcフォルダ、distフォルダ、を作成する
+### 6. srcフォルダ、distフォルダ、を作成する
 srcにあるファイルを吸い上げ => distフォルダに吐き出すイメージ
 
 ## Tips. VS Codeを使用している時に、非表示にしたいフォルダがあるときは・・・
@@ -103,7 +103,7 @@ srcにあるファイルを吸い上げ => distフォルダに吐き出すイメ
 
 node_modules、.vscodeを追加すると、設定や変更をするたびに何かとうざくならない
 
-###7. 試しに、webpackの動きを確かめてみる準備
+### 7. 試しに、webpackの動きを確かめてみる準備
 
 srcで吸い上げ→バンドル→distに吐き出すのをwebpackを使ってやってみます
 
@@ -133,7 +133,7 @@ $ tree -I 'node_modules'
 ツリーコマンドは下記のサイトを参考にしました
 <https://qiita.com/koshihikari/items/0906cd8e97b931714efe>
 
-###8. webpackの動きを確かめる
+### 8. webpackの動きを確かめる
 
 ~~~
 $ webpack ./src/app.js ./dist/app.bundle.js
@@ -166,14 +166,14 @@ console.log("hello,webpack");
 
 これでwebpackのhelloworld完了
 
-###9. minifyのコマンド
+### 9. minifyのコマンド
 
 さっきのコマンドに -p をつけると、minifyされたファイルが出力されます(minifyが何かはわかってない)
 ~~~
 $ webpack ./src/app.js ./dist/app.bundle.js -p
 ~~~
 
-###10. watchモードの使用
+### 10. watchモードの使用
 
 さらに、さっきのコマンドに --watch をつけると、watchモードで minifyされたファイルが出力されます(minifyが何かはわかってない)
 
@@ -184,7 +184,7 @@ $ webpack ./src/app.js ./dist/app.bundle.js -p --watch
 
 ターミナルがwatchモードから抜け出すには ctrl + Cで抜けれます
 
-###11. webpack.config.jsに書き出す
+### 11. webpack.config.jsに書き出す
 
 毎回、コマンドを打つのは大変だし、webpack同士のコンフリクト（衝突）にもつながるので
 webpack.config.jsに書き出しましょう
@@ -200,7 +200,7 @@ module.exports = {
 ~~~
 さっきのコマンドのコピペで大丈夫です
 
-###12. package.jsonにコマンドにwebpackの実行コマンドを書く
+### 12. package.jsonにコマンドにwebpackの実行コマンドを書く
 
 "scripts"にあるコマンドで、実行出来るように書き換える
 
@@ -225,7 +225,7 @@ module.exports = {
 コマンドの解説
 webpackを「-d」developモード、「watch」モードで実行する
 
-###13. npm run dev　でフィニッシュです
+### 13. npm run dev　でフィニッシュです
 
 webpack.config.jsとpackage.jsonに書いた内容を実行するコマンド
 ~~~
@@ -238,7 +238,7 @@ $ npm run dev
 $ webpack ./src/app.js ./dist/app.bundle.js -p --watch
 ~~~
 
-###14. prodモードも追加しておきましょう
+### 14. prodモードも追加しておきましょう
 
 ~~~
 //package.json
