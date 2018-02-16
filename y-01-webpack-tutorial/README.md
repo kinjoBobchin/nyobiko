@@ -5,7 +5,10 @@
 
 
 ## 環境構築
-0. webpack-tutorial(名前は適当でいいです)フォルダを作成する
+0. webpack-tutorial(名前は適当でOKです)フォルダを作成する
+~~~
+$ cd webpack-tutorial/
+~~~
 
 1. nodeとnpmがインストールされているか確かめる
 
