@@ -175,8 +175,7 @@ $ webpack ./src/app.js ./dist/app.bundle.js -p
 
 ### 10. watchモードの使用
 
-さらに、さっきのコマンドに --watch をつけると、watchモードで minifyされたファイルが出力されますminifyで、コードページを早くするそうです。<https://qiita.com/zaru/items/51ee8a5be22b75a42927v
->
+さらに、さっきのコマンドに --watch をつけると、watchモードで minifyされたファイルが出力されますminifyで、コードページを早くするそうです。<https://qiita.com/zaru/items/51ee8a5be22b75a42927>
 
 これで、app.jsの中身を変更して保存すると、コマンドをうたなくても、app.bundle.jsの中身が変更されます(素晴らしい)
 ~~~
