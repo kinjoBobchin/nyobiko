@@ -8,6 +8,9 @@ module.exports = {
     },
     plugins: [new HtmlWebpackPlugin({
         title: 'yeah template',
+        minify: {
+            collapseWhitespace: true
+        },
         template: './src/index.ejs'
         })
     ]
