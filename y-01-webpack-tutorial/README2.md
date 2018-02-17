@@ -82,7 +82,7 @@ $ npm run dev
 
 をうつと、index.htmlがwebpackによって生成されている
 
-### 3. index.ejsを追加
+### 4. index.ejsを追加
 
 src配下に、index.htmlの雛形となるindex.ejsを追加
 ~~~
@@ -116,10 +116,64 @@ $ npm run dev
 
 をうつと、index.htmlがwebpackによって生成されている
 
+### 5. タイトルとテンプレート名を入力
+
+index.ejsファイルを作成したら、pluginsのオプションを下記のように変更。
+templateの拡張子が、ejsになってないと出力がうまくいきません。  
+
+~~~
+(省略)
+-    plugins: [new HtmlWebpackPlugin()]
++    plugins: [new HtmlWebpackPlugin({
++        title: 'yeah template',
++        template: './src/index.ejs'
++        })
++    ]
+(省略)
+~~~
+
+### 6. minifyのオプションを追加  
+minifyした時に、空白があるとエラーを起こしてしまう為、collapseWhitespaceを追加  
+~~~
+//webpack.config.js
+    plugins: [new HtmlWebpackPlugin({
+        title: 'yeah template',
+        minify: {
+            collapseWhitespace: true
+        },
+        template: './src/index.ejs'
+        })
+    ]
+~~~
+
+### 7. hashのオプションを追加  
+毎回、bundleしたjsファイル名の後ろにハッシュしたファイル名で出力してくれるオプションの追加
+
+~~~
+//webpack.config.js
+        minify: {
+            collapseWhitespace: true
+        },
+        hash: true,
+        template: './src/index.ejs'
+        })
+    ]
+~~~
+
+### 8. 終了
+
+
+
 # 感想
 まず、最初に前回のフォルダごとコピーしてやろうと思ってすすめていたら
 前回のフォルダにあるapp.jsを読み込んで、コピーしたファイルを読もうとしなかった。
-npm initとか、npm cache clean --forceとか試したけどうまくいかなかった。。。。。
+npm initとか、npm cache clean --forceとか試したけどうまくいかなかった。。。。
+それと、はまったポイントは、outputのパスを指定するところです。
+nodeの場合の相対パスの指定が、__dirnameをくっつけることなので、これを知っていたらハマらなかった。
+あと、VSCodeでマークダウンを書くことで、空白を自動で取り除くのをマークダウンだけ除外するTips記しておきます。感謝。
+
+### Tips. VSCodeでマークダウンだけ、自動で空白を取り除かない設定をする
+<https://qiita.com/otera@github/items/d715f760aab2f6e88e67>
 
 ## 参照サイト
 <https://www.youtube.com/watch?v=JdGnYNtuEtE>
