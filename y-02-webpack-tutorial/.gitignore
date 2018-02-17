@@ -1,0 +1,14 @@
+# setting.jsonファイルはpushしない
+*.json
+
+# node_moduleはpushしない
+node_modules
+
+# .envrcはプッシュしない
+*.envrc
+
+# yarn.lockはプッシュしない
+yarn.lock
+
+# .app.js.icloudはプッシュしない
+*.icloud
