@@ -27,6 +27,10 @@ module.exports = {
             hash: true,
             template: './src/index.ejs'
         }),
-        new ExtractTextPlugin("app.css")
+        new ExtractTextPlugin({
+            filename: "app.css",
+            disable: false,
+            allChunks: true
+        })
     ]
 };
