@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -35,6 +36,7 @@ module.exports = {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
         stats: "errors-only", //コメントが冗長なので、エラーだけをlogに出力
+        hot: true,
         open: true
     },
     plugins: [
@@ -58,6 +60,8 @@ module.exports = {
             filename: "app.css",
             disable: false,
             allChunks: true
-        })
+        }),
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ]
 };
