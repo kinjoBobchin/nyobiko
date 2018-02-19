@@ -24,6 +24,10 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
+            },
+            {
+                test: /\.pug$/,
+                use: ['html-loader', 'pug-html-loader']
             }
         ],
     },
