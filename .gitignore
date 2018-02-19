@@ -1,5 +1,6 @@
 # setting.jsonファイルはpushしない
-*.json
+settings.json
+city.list.min.json
 
 # node_moduleはpushしない
 node_modules
