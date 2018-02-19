@@ -1,7 +1,19 @@
+import { ENODEV } from 'constants';
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
+
+const isProd = process.env.NODE_ENV === 'production'; // boolean
+const cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+const cssProd = ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        loader: ['css-loader', 'sass-loader'],
+        publicPath: '/dist'
+});
+const cssConfig = isProd ? cssProd : cssProd;
+
 
 module.exports = {
     entry: {
