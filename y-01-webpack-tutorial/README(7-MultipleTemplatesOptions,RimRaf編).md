@@ -2,7 +2,8 @@
 ![webpack](https://webpack.js.org/cd0bb358c45b584743d8ce4991777c42.svg "webpack")
 
 ## やりたいこと
-・pug-loaderを使用する
+・rimrafを使用
+・イベントを独立させる
 
 ## このチュートリアルの所要時間
 ・約3分ぐらいだと思います。
