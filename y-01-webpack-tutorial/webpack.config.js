@@ -41,14 +41,14 @@ module.exports = {
             // },
             hash: true,
             excludeChunks: ['contact'],
-            template: './src/index.html'
+            template: './src/index.pug'
         }),
         new HtmlWebpackPlugin({
             title: 'yeah ×2 template',
             hash: true,
             filename: 'contact.html',
             chunks: ['contact'],
-            template: './src/contact.html'
+            template: './src/contact.pug'
         }),
         new ExtractTextPlugin({
             filename: "app.css",
