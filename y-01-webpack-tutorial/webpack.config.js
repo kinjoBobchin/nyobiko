@@ -27,7 +27,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
-        stats: "errors-only",
+        stats: "errors-only", //コメントが冗長なので、エラーだけをlogに出力
         open: true
     },
     plugins: [

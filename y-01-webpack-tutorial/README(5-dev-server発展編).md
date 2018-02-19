@@ -27,14 +27,15 @@
 <https://webpack.js.org/configuration/dev-server/#src/components/Sidebar/Sidebar.jsx>
   
 statsオプションの詳細は下記にあります
-<https://webpack.js.org/configuration/stats/>
-### 1. ブラウザが自動で立ち上がるぞ！
+<https://webpack.js.org/configuration/stats/>  
+
+### 1. ブラウザが自動で立ち上がる！
 
 この章でserverを立ち上げたタイミングで、ブラウザ起動が自動でされるようになります
 
-
 # 感想
 この章でブラウザが自動で立ち上げれた。
+ここまでの章と比べて、dev-serverの導入は簡単。
 
 ## 参照サイト
 <https://youtu.be/m7V0OackwxY>
