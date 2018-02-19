@@ -15,10 +15,15 @@
 
 ## チュートリアル後の最終目標とのギャップ
 ・babelとReactのインストールをしています  babelは使用したいので導入しました。  
-・①②③がほぼ達成されました。あとはtypescriptとpugのloaderを導入したら、この目的は果たされます
+・①②③がほぼ達成されました。あとはtypescriptとpugのloaderを導入したら、この目的は果たされます  
+・今まで、別PCになると、なんでコピー出来ないのかなーと思っていたらpackage.jsonを共有していないからっぽいです。
+<https://qiita.com/sinmetal/items/395edf1d195382cfd8bc>  
+なのでpackage.jsonもgitにあげて共有するようにします。
+
 
 
 ## このチュートリアルの範囲
+細かい事は動画の中にあるので書かないが、インストールしているものだけは記録するようにする
 動画<https://youtu.be/zhA5LNA3MxE>  
 
 ・babel<https://babeljs.io/docs/setup/#installation>  
