@@ -37,7 +37,13 @@ module.exports = {
             //     collapseWhitespace: true
             // },
             hash: true,
-            template: './src/index.ejs'
+            template: './src/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'yeah ×2 template',
+            hash: true,
+            filename: 'contact.html',
+            template: './src/contact.html'
         }),
         new ExtractTextPlugin({
             filename: "app.css",
