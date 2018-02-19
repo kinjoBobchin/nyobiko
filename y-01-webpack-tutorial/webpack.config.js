@@ -1,5 +1,3 @@
-import { ENODEV } from 'constants';
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
@@ -67,7 +65,7 @@ module.exports = {
         }),
         new ExtractTextPlugin({
             filename: "app.css",
-            disable: true,
+            disable: !isProd,
             allChunks: true
         }),
         new webpack.NamedModulesPlugin(),
