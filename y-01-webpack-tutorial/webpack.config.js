@@ -37,6 +37,7 @@ module.exports = {
             //     collapseWhitespace: true
             // },
             hash: true,
+            filename: './../index.html',
             template: './src/index.ejs'
         }),
         new ExtractTextPlugin({
