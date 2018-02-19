@@ -1,6 +1,3 @@
-# setting.jsonファイルはpushしない
-*.json
-
 # node_moduleはpushしない
 node_modules
 
