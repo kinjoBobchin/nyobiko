@@ -24,6 +24,68 @@
 ・babel<https://babeljs.io/docs/setup/#installation>  
 ・ReactのGithub<https://github.com/facebook/react>  
 
+### 1. react、react-domのインストール
+
+~~~
+$ npm i -D react react-dom
+~~~
+
+### 2. ES6とJSXを使用するため、babelもインストールする
+
+~~~
+$ npm i -D babel babel-preset-react babel-preset-es2015
+~~~
+
+### 3. .bablercファイルを作成し、prestを記載
+~~~
+//.babelrc
+{
+    "presets": ['es2015','react']
+}
+~~~
+
+### 4. app.jsにreactとreact-domをimport
+npmのインストールは終わったので、app.jsに記載していく
+<https://youtu.be/zhA5LNA3MxE?t=3m33s>  
+
+### 5. app.ejsにidがrootのDOMを書いて、テストをする  
+~~~
+//app.ejs
+  <body>
+      <div id="root"></div>
+  </body>
+~~~
+
+### 6. babel-loader、babel-coreのインストール  
+
+~~~
+$ npm i -D babel-loader babel-core
+~~~
+
+### 7. Javascriptを読む際に、ルールを追加する
+
+~~~
+// webpack.config.js
+    module:{
+        rules: [
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
+                })
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            }
+        ],
+    }
+~~~
+
+### 8. 終了
+
 
 # 感想
 この章でbableの導入できた。ちょっとインストールするの多い。
