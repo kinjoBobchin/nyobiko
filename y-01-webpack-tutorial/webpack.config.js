@@ -40,12 +40,14 @@ module.exports = {
             //     collapseWhitespace: true
             // },
             hash: true,
+            excludeChunks: ['contact'],
             template: './src/index.html'
         }),
         new HtmlWebpackPlugin({
             title: 'yeah ×2 template',
             hash: true,
             filename: 'contact.html',
+            chunks: ['contact'],
             template: './src/contact.html'
         }),
         new ExtractTextPlugin({
