@@ -1,1 +1,32 @@
-天気予報
+<md-content layout="column" layout-align="center center" flex>
+    <h2>{{ city }}の3時間おきの天気予報</h2>
+    <md-nav-bar
+        md-no-ink-bar="disableInkBar"
+        md-selected-nav-item="currentNavItem"
+        nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-href="#!/forecast/2" name="2">
+            6時間先
+        </md-nav-item>
+        <md-nav-item md-nav-href="#!/forecast/4" name="4">
+            12時間先
+        </md-nav-item>
+        <md-nav-item md-nav-href="#!/forecast/6" name="6">
+            18時間先
+        </md-nav-item>
+    </md-nav-bar>
+    <md-content layout="column">
+        <md-list ng-repeat="weather in weatherResult.list">
+            <md-list-item class="md-2-line">
+                <div class="md-list-item-text">
+                    <h3>気温： {{ weather.main.temp | number: 1}}度</h3>
+                    <p>{{ convertDate(weather.dt) | date: "yyyy年MM月dd日 HH時mm分"}}</p>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+        </md-list>
+        <md-button ng-href="#!/" class="md-raised md-accent">
+            <md-icon>redo</md-icon>
+            検索に戻る
+        </md-button>
+    </md-content>
+</md-content>

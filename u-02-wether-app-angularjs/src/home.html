@@ -1,7 +1,13 @@
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <h4>予報をみたい町を選んでください</h4>
-        <input type="text" class="form-control">
-        <a href="#!/forecast" class="btn btn-primary">予報を見る</a>
-    </div>
-</div>
+<md-content layout="column" layout-align="center center" flex>
+    <h2>地名をアルファベットで入力してください</h2>
+    <form ng-submit="submit()" layout="column" layout-align=" center" name="weatherForm">
+        <md-input-container class="md-block">
+            <input ng-model="city" type="text" placeholder="例：Okinawa" name="weather" required md-maxlength="20">
+            <ng-messages for="weatherForm.weather.$error">
+                <div ng-message="required">ボックスが空です</div>
+                <div ng-message="md-maxlength">文字数が多いです</div>
+            </ng-messages>
+        </md-input-container>
+        <md-button type="submit" class="md-raised md-accent">予報を見る</md-button>
+    </form>
+</md-content>
