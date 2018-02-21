@@ -2,7 +2,7 @@
 ![webpack](https://webpack.js.org/cd0bb358c45b584743d8ce4991777c42.svg "webpack")
 
 ## やりたいこと
-・PUGをコンパイルする
+・ExtractTextPluginを使わずとも、ファイル更新のタイミングで、ブラウザの表示も更新する
 
 ## このチュートリアルの所要時間
 ・約3分ぐらいだと思います。

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="weatherApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular天気予報</title>
+
+    <!-- マテリアルのCSS -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+    <!-- マテリアルのアイコンを使用できるように追加 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- angularをCDNから取得 -->
+    <script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.9/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.9/angular-resource.min.js"></script>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.7/angular-material.min.js"></script>
+
+    <!-- 依存関係にあるファイルの参照先 -->
+    <script src="app.js"></script>
+    <script src="route.js"></script>
+    <script src="src/service/city-service.js"></script>
+    <script src="src/service/weather-service.js"></script>
+    <script src="src/controller/home-controller.js"></script>
+    <script src="src/controller/forecast-controller.js"></script>
+
+    <!-- chart.jsを使用 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+</head>
+<body>
+    <header-toolbar></header-toolbar>
+    <md-content layout-padding>
+        <div ng-view></div>
+    </md-content>
+</body>
+</html>
