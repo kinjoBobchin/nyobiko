@@ -5,7 +5,9 @@
 
 # 動機
 * GitHubからダウンロードしてアプリを作ってみるを体験したかった  
-* webpackとAngularJSの組み合わせで勉強したかったのでGitHubにあがっていた[ファイル](https://github.com/preboot/angularjs-webpack)を使用。ありがたい。。。(TωT)  
+* webpackとAngularJSの組み合わせで勉強したかったのでGitHubにあがっていたファイルを使用。  
+https://github.com/preboot/angularjs-webpack  
+ありがたい。。。(TωT)  
 >(中略)
 A complete, yet simple, starter for AngularJS using Webpack.
 (中略)  
@@ -17,4 +19,4 @@ this workflow is pretty much generic.
 * UIは[AngularJS Material](https://material.angularjs.org/latest/)を使う
   
   
-* [人の書いたREADME]()を見るのは勉強になるなぁ
+* 人の書いたREADMEを見るのは勉強になるなぁ
