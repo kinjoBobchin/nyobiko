@@ -167,7 +167,9 @@ module.exports = function makeWebpackConfig() {
           plugins: [autoprefixer]
         }
       }
-    })
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ];
 
   // Skip rendering index.html in test mode
@@ -218,7 +220,9 @@ module.exports = function makeWebpackConfig() {
   config.devServer = {
     contentBase: './src/public',
     stats: 'minimal',
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    hot: true,
+    open: true
   };
 
   return config;
