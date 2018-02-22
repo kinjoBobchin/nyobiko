@@ -1,19 +1,19 @@
 'use strict';
 
 // Modules
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 /**
  * Env
  * Get npm lifecycle event to identify the environment
  */
-var ENV = process.env.npm_lifecycle_event;
-var isTest = ENV === 'test' || ENV === 'test-watch';
-var isProd = ENV === 'build';
+const ENV = process.env.npm_lifecycle_event;
+const isTest = ENV === 'test' || ENV === 'test-watch';
+const isProd = ENV === 'build';
 
 module.exports = function makeWebpackConfig() {
   /**
@@ -124,7 +124,14 @@ module.exports = function makeWebpackConfig() {
       // Allow loading html through js
       test: /\.html$/,
       loader: 'raw-loader'
-    }]
+    }, {
+      // PUG LOADER
+      // Reference: https://github.com/pugjs/pug-loader
+      // Allow loading Pug Template through HTML
+      test: /\.pug$/,
+      loader: ['html-loader', 'pug-html-loader']
+      }
+    ]
   };
 
   // ISTANBUL LOADER
@@ -143,7 +150,7 @@ module.exports = function makeWebpackConfig() {
       query: {
         esModules: true
       }
-    })
+    });
   }
 
   /**
@@ -167,6 +174,10 @@ module.exports = function makeWebpackConfig() {
           plugins: [autoprefixer]
         }
       }
+    }),
+    new HtmlWebpackPlugin({
+      test: /\.pug$/i,
+      template: './src/app/app.pug'
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
