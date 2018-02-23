@@ -1,5 +1,13 @@
+// 依存パッケージ
 import angular from 'angular';
+import uiRouter   from 'angular-ui-router';
+import ngAnimate  from 'angular-animate';
+import ngAria     from 'angular-aria';
+import ngMessages from 'angular-messages';
+import ngMaterial from 'angular-material';
 
+// CSS
+import 'angular-material/angular-material.css';
 import '../style/app.css';
 
 let app = () => {
@@ -18,7 +26,7 @@ class AppCtrl {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [])
+angular.module(MODULE_NAME, ['ngMaterial','ngMessages'])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl);
 
