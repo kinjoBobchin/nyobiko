@@ -1,7 +1,12 @@
+md-toolbar
+  .md-toolbar-tools
+    md-button
+      md-icon home
 main
   h1.title Hello from Angular !
 
   //Images (and assets) are parsed and loaded from within the public directory
   img(src="/img/logo.png")
-footer
-  a(ng-href="{{app.url}}") Webpack Angular Starter
+footer(layout="column" layout-align="center center")
+  a(ng-href="{{app.prebootUrl}}") Webpack Angular Starter
+  a(ng-href="{{app.materialUrl}}") AngularJS Material
