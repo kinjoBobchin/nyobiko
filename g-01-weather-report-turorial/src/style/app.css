@@ -2,6 +2,7 @@
 body {
   background: #0147A7;
   color: #fff;
+  height: 100%;
 }
 
 a {
@@ -17,6 +18,5 @@ main {
 }
 
 footer {
-  text-align: center;
   font-size: 0.8em;
 }

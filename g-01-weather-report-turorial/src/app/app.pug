@@ -1,12 +1,15 @@
 md-toolbar
-  .md-toolbar-tools
+  .md-toolbar-tools(layout="row" layout-align="space-between center")
     md-button
       md-icon home
+    md-button
+      md-icon settings
 main
   h1.title Hello from Angular !
 
   //Images (and assets) are parsed and loaded from within the public directory
   img(src="/img/logo.png")
+  p {{app.message}}
 footer(layout="column" layout-align="center center")
-  a(ng-href="{{app.prebootUrl}}") Webpack Angular Starter
-  a(ng-href="{{app.materialUrl}}") AngularJS Material
+  md-button(href="{{app.prebootUrl}}") Webpack Angular Starter
+  md-button(href="{{app.materialUrl}}") AngularJS Material
