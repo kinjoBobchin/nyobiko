@@ -10,7 +10,7 @@ import ngMaterial from 'angular-material';
 import 'angular-material/angular-material.css';
 import '../style/app.css';
 
-let app = () => {
+const app = () => {
   return {
     template: require('./app.pug'),
     controller: 'AppCtrl',
@@ -20,7 +20,8 @@ let app = () => {
 
 class AppCtrl {
   constructor() {
-    this.url = 'https://github.com/preboot/angular-webpack';
+    this.prebootUrl = 'https://github.com/preboot/angular-webpack';
+    this.materialUrl = 'https://github.com/angular/material';
   }
 }
 
