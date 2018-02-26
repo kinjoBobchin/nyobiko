@@ -31,16 +31,9 @@ const MODULE_NAME = 'app';
 angular.module(MODULE_NAME, ['ngMaterial', 'ngMessages', 'ui.router'])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl)
-  .config(['$stateProvider', '$urlRouterProvider',
-    function ($stateProvider, $urlRouterProvider) {
-      $stateProvider
-        .state('weather', {
-          url: '/weather',
-          controller: 'weatherController',
-          templateUrl: 'templates/weather/weather.pug'
-        });
+  .config(['$urlRouterProvider',
+    function ($urlRouterProvider) {
       $urlRouterProvider.otherwise('/');
     }]);
-
 
 export default MODULE_NAME;
