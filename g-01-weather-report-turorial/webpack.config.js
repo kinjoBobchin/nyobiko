@@ -180,6 +180,8 @@ module.exports = function makeWebpackConfig() {
       test: /\.pug$/i,
       template: './src/app/app.pug'
     }),
+    // to use HotModuleReolacement
+    // Reference: https://webpack.js.org/guides/hot-module-replacement/
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ];
