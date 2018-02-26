@@ -229,7 +229,7 @@ module.exports = function makeWebpackConfig() {
       // Reference: https://webpack.js.org/guides/hot-module-replacement/
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin()
-    )
+    );
   }
 
   /**
