@@ -30,7 +30,7 @@ module.exports = function makeWebpackConfig() {
    * Should be an empty object if it's generating a test build
    * Karma will set this when it's a test build
    */
-  config.entry = isTest ? void 0 : {
+  config.entry = isTest ? void 0 : {  //test => true 無効化。false => fileを指定
     app: './src/app/app.js'
   };
 
