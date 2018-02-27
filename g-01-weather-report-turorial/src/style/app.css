@@ -2,19 +2,12 @@
 body {
   background: #0147A7;
   color: #fff;
-  height: 100%;
-}
-
-a {
-  color: #03A9F4;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
   padding: 1em;
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  margin-top: 50px;
-  display: block;
 }
 
 footer {
