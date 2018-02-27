@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "jshint": "^2.9.5"
+    "jshint": "^2.9.5",
+    "node": "^9.5.0"
   },
   "devDependencies": {
     "angular-material": "^1.1.7"

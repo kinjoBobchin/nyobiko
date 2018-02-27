@@ -14,7 +14,6 @@
     "url": "https://github.com/kinjoBobchin/nyobiko/tree/master/g-01-weather-report-turorial"
   },
   "author": "kj",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kinjoBobchin/nyobiko/issues"
   },
@@ -29,6 +28,7 @@
     "angular-ui-router": "^1.0.3",
     "latest": "^0.2.0",
     "material-design-icons": "^3.0.1",
+    "scss-loader": "^0.0.1",
     "webpack": "^3.11.0"
   },
   "devDependencies": {
