@@ -1,6 +1,7 @@
 {
   "rules": {
     "no-extra-semi": "warn",
-    "quotes": ["warn", "single"]
+    "quotes": ["warn", "double"],
+    "space-before-blocks": ["warn", {"functions": "always"}]
   }
 }
