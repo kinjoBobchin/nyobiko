@@ -1,4 +1,10 @@
 {
+  "name": "nyobiko-tutorial",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint /nyobiko/*"
+  },
   "dependencies": {
     "node": "^9.5.0"
   },
