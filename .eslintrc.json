@@ -1,13 +1,16 @@
 {
-  "env": {
-    "browser": true
+  "env": { // https://eslint.org/docs/user-guide/configuring#specifying-environments
+    "browser": true,
+    "es6": true,
+    "commonjs": true
   },
-  "globals": {
+  "extends": "eslint:recommended",
+  "globals": { // https://github.com/sindresorhus/globals/blob/master/globals.json
       "$" : false
     },
   "rules": {
     "no-extra-semi": "warn",
-    "quotes": ["warn", "double"],
+    "quotes": ["warn", "single"],
     "no-undef": "warn",
     "space-before-blocks": ["warn",
       {
