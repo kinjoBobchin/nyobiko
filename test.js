@@ -10,6 +10,3 @@ if (a) {
 var a = function() {}
 
 // classes
-class Foo {
-  constructor() {} // functions
-}
