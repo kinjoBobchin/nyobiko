@@ -2,6 +2,7 @@
   "rules": {
     "no-extra-semi": "warn",
     "quotes": ["warn", "double"],
+    "no-undef": "warn",
     "space-before-blocks": ["warn",
       {
         "functions": "always",
