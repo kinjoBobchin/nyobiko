@@ -1,4 +1,11 @@
 {
+  "globals": {
+      "alert" : false,
+      "console" : false,
+      "$" : false,
+      "window" : false,
+      "document" : false
+    },
   "rules": {
     "no-extra-semi": "warn",
     "quotes": ["warn", "double"],
