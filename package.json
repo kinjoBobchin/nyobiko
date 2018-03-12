@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint /Users/t00234/Desktop/nyobiko/*.js"
+    "lint": "eslint /Users/t00234/Desktop/nyobiko/*.js --fix"
   },
   "dependencies": {
     "node": "^9.5.0"
