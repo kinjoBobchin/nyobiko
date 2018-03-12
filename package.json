@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint /nyobiko/*"
+    "lint": "eslint /Users/t00234/Desktop/nyobiko/*.js"
   },
   "dependencies": {
     "node": "^9.5.0"
   },
   "devDependencies": {
-    "eslint": "^4.18.2"
+    "eslint": "^4.18.2",
+    "yarn": "^1.5.1"
   }
 }
